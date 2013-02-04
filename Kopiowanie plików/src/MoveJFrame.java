@@ -44,7 +44,7 @@ public class MoveJFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Katalog źródłowy");
 
-        jTextField1.setText("E:\\Programy\\Kopiowanie plików\\katalog1");
+        jTextField1.setText("E:\\Programy\\dupa1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
