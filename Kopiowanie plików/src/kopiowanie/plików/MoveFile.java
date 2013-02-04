@@ -26,6 +26,10 @@ public class MoveFile {
         tsDir = new File(destDir);     
     }
     
+    public int isDirEmpty () {
+        return trDir.listFiles().length;
+    }
+    
     public int MoveFiles() {
         int count = trDir.listFiles().length;
         for(int i = 0; i<trDir.listFiles().length; ) {

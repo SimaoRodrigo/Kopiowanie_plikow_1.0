@@ -4,11 +4,13 @@
  */
 package kopiowanie.plików;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Szymon
  */
-public class DelayApp implements Runnable{
+public class DelayApp extends Thread{
     
     int delay;
     MoveFile moveApp;
@@ -25,15 +27,30 @@ public class DelayApp implements Runnable{
         this.jTextArea1 = jTextArea1;
     }
     
-    public void runApp (){   
-        moveApp.MoveFiles();
-        //jTextArea1.append()
-                //Integer.toString());
+    public void runApp (){  
+        
+            if (moveApp.isDirEmpty()>0) {
+                Calendar clock1 = Calendar.getInstance();
+                if (!(jTextArea1 == null))
+                    jTextArea1.append(clock1.getTime() + "\n" +
+                            "Przekopiowano " +
+                            Integer.toString(moveApp.MoveFiles()) +
+                            " plików\n");
+            }
+        
     }
 
     @Override
     public void run() {
-        
-        throw new UnsupportedOperationException("Not supported yet.");
+        while (true){
+            runApp();
+                try {
+                Thread.currentThread().sleep(delay*1000);
+            }
+            catch (InterruptedException e){
+                break;
+            }
+        }
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 }
