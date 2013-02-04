@@ -26,7 +26,9 @@ public class DelayApp implements Runnable{
     }
     
     public void runApp (){   
-        jTextArea1.append(Integer.toString(moveApp.MoveFiles()));
+        moveApp.MoveFiles();
+        //jTextArea1.append()
+                //Integer.toString());
     }
 
     @Override
